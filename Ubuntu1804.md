@@ -28,10 +28,15 @@
 <code>
 # apt-get install php-fpm
 # apt-get install php-mstring php-curl php-xml
+# apt-get install mcrypt
 
 # composer self-update 
 # token
 https://github.com/settings/tokens
+
+
+ yii2 버젼업
+# composer update yiisoft/yii2 yiisoft/yii2-composer bower-asset/inputmask
 
 </code>
 </pre>

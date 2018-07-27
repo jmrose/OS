@@ -26,8 +26,8 @@
 ## php install
 <pre>
 <code>
-# apt-get install php-fpm
-# apt-get install php-mstring php-curl php-xml
+# apt-get install php5.6-fpm
+# apt-get install php5.6-mstring php5.6-curl php5.6-xml php5.6-mysqli
 # apt-get install mcrypt
 
 # composer self-update 

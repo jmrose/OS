@@ -44,7 +44,9 @@ $ composer update yiisoft/yii2 yiisoft/yii2-composer bower-asset/inputmask
   
   
   
-# Gearman Install ( php5>=, php<6 에서 사용가능 )
+# Gearman Install
+_( php5>=, php<6 에서 사용가능 )_  
+  
 $ sudo apt-get install gearman-job-server libgearman-dev   
 $ sudo apt-get upgrade  
 $ sudo pecl install gearman  ( pecl : php 확장저장소이며  php-dev 설치해야 실행 됨 )  
@@ -61,12 +63,13 @@ $ gearadmin --shutdown
 $ gearmand -d -l /var/log/gearmand.log  
   
   
-# [Supervisor install](http://supervisord.org/installing.html)  ( python 2.4 이상 python 3 이하에서 사용가능 )
+# [Supervisor install](http://supervisord.org/installing.html)  
+_( python 2.4 이상 python 3 이하에서 사용가능 )_  
   
 $ apt-get update  
 $ apt-get install python3.6  
-$ ln -s /usr/bin/python3.6 /usr/bin/python
-
+$ ln -s /usr/bin/python3.6 /usr/bin/python  
+  
 $ apt-get install python3-pip  
   
 $ ln -s /usr/bin/pip3 /usr/bin/pip  

@@ -77,5 +77,11 @@ $ pip install setuptools
   
 $ pip install git+https://github.com/Supervisor/supervisor ( python3에서 실행가능버젼 )
   
-
+  
+# Ubuntu 설정 및 명령어  
+  
+#### Ubuntu 서버 시간 변경
+$ date  
+$ sudo dpkg-reconfigure tzdata  
+  Asia/Seoul 선택하기  
 

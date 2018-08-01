@@ -55,7 +55,7 @@ Device       Start       End   Sectors  Size Type
 </pre>
 
 
-##### [Creating a Swap File](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04)
+##### Creating a Swap File
 _Ubuntu 18.04에  swap file이 생김...  swap을 file 로 만들기_
 $ sudo fallocate -l 1G /swapfile   
   
@@ -134,7 +134,7 @@ $ gearadmin --shutdown
 $ gearmand -d -l /var/log/gearmand.log  
   
   
-# [Supervisor install](http://supervisord.org/installing.html)  
+# Supervisor Install
  
 $ apt-get update  
 $ apt-get install python3.6  
@@ -150,3 +150,7 @@ $ pip install git+https://github.com/Supervisor/supervisor ( python3에서 실�
   
 <br/><br/>
 
+
+### 참조
+* [Supervisord](http://supervisord.org/installing.html)
+* [How To Add Swap Space on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04)

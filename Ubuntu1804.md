@@ -1,3 +1,74 @@
+## Ubuntu 18.04 주요사항 
+* python 3.6 이 기본 설치 됨
+* 커널 4.15 탑재 
+* Swap  대신 스왑 파일이 생성됨  
+* 최소 설치 옵션이 생김
+* 설치 이미지 63bit만 지원
+  
+## Ubuntu 설정 및 명령어  
+  
+#### 시간설정
+$ date  
+$ sudo dpkg-reconfigure tzdata  
+  Asia/Seoul 선택하기  
+  
+  
+### Swap
+  
+##### swap 정보 보기  
+$ sudo swapon --show  
+
+<pre>
+<code>
+----- partition 으로 잡혀 있는 경우 -----
+
+~# sudo swapon --show
+NAME      TYPE      SIZE USED PRIO
+/dev/sda3 partition   4G   0B   -2
+
+~# fdisk -l
+Disk /dev/loop0: 86.9 MiB, 91099136 bytes, 177928 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 86.6 MiB, 90759168 bytes, 177264 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda: 59.6 GiB, 64023257088 bytes, 125045424 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: EF06B257-9E52-4EDB-ACCF-AA837881A283
+
+Device       Start       End   Sectors  Size Type
+/dev/sda1     2048      4095      2048    1M BIOS boot
+/dev/sda2     4096   1052671   1048576  512M Linux filesystem
+/dev/sda3  1052672   9441279   8388608    4G Linux swap
+/dev/sda4  9441280 125042687 115601408 55.1G Linux filesystem
+</code>
+</pre>
+
+
+##### [Creating a Swap File](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04)
+_Ubuntu 18.04에  swap file이 생김...  swap을 file 로 만들기_
+$ sudo fallocate -l 1G /swapfile   
+  
+$ ls -lh /swapfile  
+-rw-r--r-- 1 root root 1.0G Apr 25 11:14 /swapfile  
+  
+$ sudo chmod 600 /swapfile  
+$ sudo mkswap /swapfile  
+$ sudo swapon /swapfile  
+$ sudo swapon --show  
+ 
+<br/><br/><br/>
+
 # Nginx install
 $ apt-get update   
 $ apt-get install nginx    
@@ -64,8 +135,7 @@ $ gearmand -d -l /var/log/gearmand.log
   
   
 # [Supervisor install](http://supervisord.org/installing.html)  
-_( python 2.4 이상 python 3 이하에서 사용가능 )_  
-  
+ 
 $ apt-get update  
 $ apt-get install python3.6  
 $ ln -s /usr/bin/python3.6 /usr/bin/python  
@@ -78,10 +148,5 @@ $ pip install setuptools
 $ pip install git+https://github.com/Supervisor/supervisor ( python3에서 실행가능버젼 )
   
   
-# Ubuntu 설정 및 명령어  
-  
-#### Ubuntu 서버 시간 변경
-$ date  
-$ sudo dpkg-reconfigure tzdata  
-  Asia/Seoul 선택하기  
+<br/><br/>
 
